@@ -2,13 +2,41 @@
   height: 100vh;
   display: flex;
   background-color: #0e55a0;
-  color: whitesmoke;
+  color: #0e55a0;
 }
 
 .main {
   width: 75%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #6b849e), 
   url("./assets/bg.jpg") center;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  color: whitesmoke;
+  height: 50%;
+  position: relative;
+}
+
+.timmer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  bottom: 10px;
+  left: 80px;
+}
+
+.bottom {
+  color: whitesmoke;
+  height: 50%;
 }
 
 .pyramid {
@@ -32,7 +60,7 @@
 }
 
 .ListItem.active {
-  background-color: #072b52;
+  background-color: #051e38;
 }
 
 .ListItemNumber {
