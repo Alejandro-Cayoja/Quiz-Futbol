@@ -39,6 +39,69 @@
   height: 50%;
 }
 
+.trivia {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.question {
+  width: 80%;
+  background: linear-gradient(#0e55a0, black);
+  border: 2px solid white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.answers {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.answer {
+  width: 40%;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient( black, #0e55a0);
+  border: 1px solid white;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  margin: 0 10px 20px 10px;
+}
+
+.answer:hover, .answer.active {
+  background: green;
+}
+
+.answer.wrong {
+  animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+  0%,
+  22%,
+  42%{
+    background: #020e1c;
+  }
+  20%,
+  40%,
+  60%{
+    background: linear-gradient(black, #020e1c);
+  }
+  62%,
+  100%{
+    background: crimson;
+  }
+}
+
 .pyramid {
   width: 25%;
   display: flex;
