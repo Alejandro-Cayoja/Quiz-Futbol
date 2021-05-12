@@ -1,12 +1,49 @@
-export default function Trivia() {
+import { useEffect, useState } from "react";
+
+export default function Trivia({
+    data, 
+    setTimeOut, 
+    questionNumber, 
+    setQuestionNumber}) {
+        const [question, setQuestion] = useState(null);
+        const [selectedAnswer, setSelectedAnswer] = useState(null);
+        const [className, setClassName] = useState("answer");
+
+        useEffect(() => {
+            setQuestion(data[questionNumber - 1]);
+        }, [data, questionNumber]);
+
+        const delay = (duration, callback) => {
+            setTimeOut(() => {
+                callback();
+            }, duration);
+        };
+
+        const handleClick = (a) => {
+            setSelectedAnswer(a);
+            setClassName("answer active");
+            delay(3000, () =>
+                setClassName(a.correct ? "answer correct" : "answer wrong")
+            );
+            delay(6000, () => {
+                    if(a.correct){
+                        setQuestionNumber((prev) => prev + 1);
+                        setSelectedAnswer(null);
+                    } else {
+                        setTimeOut(true);
+                    }
+                });
+        };
+
     return (
         <div className="trivia">
-            <div className="question"> ¿ Quien es el goleador de la copa del mundo ?</div>
+            <div className="question">{question?.question}</div>
             <div className="answers">
-                <div className="answer wrong">Ronaldo</div>
-                <div className="answer">Müller</div>
-                <div className="answer">Maradona</div>
-                <div className="answer">Klose</div>
+                {question?.answers.map((a) => (
+                    <div className={selectedAnswer === a ? className : "answer"} onClick={() => handleClick (a)}>
+                        {a.text}
+                    </div>
+                ))}
             </div>
         </div>
     )

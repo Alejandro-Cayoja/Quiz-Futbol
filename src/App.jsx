@@ -3,7 +3,78 @@ import './App.css';
 import Trivia from './components/Trivia';
 
 function App() {
-  const [questionNumber, setQuestionNumber] = useState (1)
+  const [questionNumber, setQuestionNumber] = useState (1);
+  const [timeOut, setTimeOut] = useState (false);
+
+  const data = [
+    {
+      id: 1,
+      question: " ¿ Quien realizo el gol de la victoria, en la final del mundial 2010 ? ",
+      answers: [
+        {
+          text: "Cesc Fabregas",
+          correct: false,
+        },
+        {
+          text: "Andrés Iniesta",
+          correct: true,
+        },
+        {
+          text: "Carles Puyol",
+          correct: false,
+        },
+        {
+          text: "Arjen Robben",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 2,
+      question: " ¿ En que año se jugo una final de Champions League entre equipos Alemanes ? ",
+      answers: [
+        {
+          text: "2011/2012",
+          correct: false,
+        },
+        {
+          text: "2009/2010",
+          correct: false,
+        },
+        {
+          text: "2012/2013",
+          correct: true,
+        },
+        {
+          text: "2001/2002",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 3,
+      question: " Antes de estar en el Futból Europeo ¿ En que club jugo Neymar Jr. ? ",
+      answers: [
+        {
+          text: "Santos",
+          correct: true,
+        },
+        {
+          text: "Grêmio",
+          correct: false,
+        },
+        {
+          text: "São Paulo",
+          correct: false,
+        },
+        {
+          text: "Palmeiras",
+          correct: false,
+        },
+      ],
+    },
+  ]
+
   const ListPyramid = [
     {id:1, amount:"Nada mal"},
     {id:2, amount:"Bien"},
@@ -23,7 +94,11 @@ function App() {
           <div className="timmer">30</div>
         </div>
         <div className="bottom">
-          <Trivia/>
+          <Trivia data={data} 
+          setTimeOut={setTimeOut} 
+          questionNumber={questionNumber}
+          setQuestionNumber={setQuestionNumber} 
+          />
         </div>
       </div>
       <div className="pyramid">

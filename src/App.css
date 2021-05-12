@@ -78,7 +78,28 @@
 }
 
 .answer:hover, .answer.active {
-  background: green;
+  background: #4da0f3;
+}
+
+.answer.correct {
+  animation: correct 3s ease forwards;
+}
+
+@keyframes correct {
+  0%,
+  22%,
+  42%{
+    background: #020e1c;
+  }
+  20%,
+  40%,
+  60%{
+    background: linear-gradient(black, #020e1c);
+  }
+  62%,
+  100%{
+    background: green;
+  }
 }
 
 .answer.wrong {
