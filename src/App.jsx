@@ -2,8 +2,10 @@ import { useEffect, useMemo, useState } from 'react';
 import './App.css';
 import Timer from './components/Timer';
 import Trivia from './components/Trivia';
+import Start from "./components/Start";
 
 function App() {
+  const [username, setUsername] = useState (null);
   const [questionNumber, setQuestionNumber] = useState (1);
   const [timeOut, setTimeOut] = useState (false);
   const [earned, setEarned] = useState ("Novato");
@@ -79,16 +81,17 @@ function App() {
 
   const ListPyramid = useMemo(() => 
     [
-      {id:1, amount:"10 - Nada mal"},
-      {id:2, amount:"9 - Bien"},
-      {id:3, amount:"8 - En racha prro"},
-      {id:4, amount:"7 - Seguis en racha wacho"},
-      {id:5, amount:"6 - 5/10 mira vos"},
-      {id:6, amount:"5 - Ahora se complica prro"},
-      {id:7, amount:"4 - Vamo a jugar"},
-      {id:8, amount:"3 - Ya tu sabes"},
-      {id:9, amount:"2 - No la pechees"},
-      {id:10, amount:"1 - MVP"},
+      {id:1 , amount:"Novato"},
+      {id:2, amount:"10 - Nada mal"},
+      {id:3, amount:"9 - Bien"},
+      {id:4, amount:"8 - En racha prro"},
+      {id:5, amount:"7 - Seguis en racha wacho"},
+      {id:6, amount:"6 - Mira vos, sabeee"},
+      {id:7, amount:"5 - Ahora se complica prro"},
+      {id:8, amount:"4 - Vamo a jugar"},
+      {id:9, amount:"3 - Ya tu sabes"},
+      {id:10, amount:"2 - No la pechees"},
+      {id:11, amount:"1 - MVP"},
     ].reverse(),
    []
   );
@@ -99,7 +102,9 @@ function App() {
   }, [ListPyramid, questionNumber]);
   return (
     <div className="app">
-      <div className="main">
+      {username ? (
+        <>
+        <div className="main">
         {timeOut ? (
           <h1 className="endText">Fallastes,<br/>llegastes hasta la <br/>posicion: {earned} </h1>
         ) : (
@@ -119,17 +124,27 @@ function App() {
             </div>
           </>
         )}
-      </div>
-      <div className="pyramid">
-        <ul className="List">
-          {ListPyramid.map((m) => (
-            <li className={questionNumber === m.id ? "ListItem active" : "ListItem"} >
-              <span className="ListItemNumber">{m.id}</span>
-              <span className="ListItemAmount">{m.amount}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+        </div>
+        <div className="pyramid">
+          <ul className="List">
+            {ListPyramid.map((m) => (
+              <li 
+                className={
+                  questionNumber === m.id 
+                    ? "ListItem active" 
+                    : "ListItem"
+                } 
+              >
+                <span className="ListItemNumber">{m.id}</span>
+                <span className="ListItemAmount">{m.amount}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        </>
+      ) : (
+        <Start setUsername={setUsername}/>
+      )}
     </div>
   );
 }
