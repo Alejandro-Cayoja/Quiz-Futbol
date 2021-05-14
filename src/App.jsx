@@ -6,7 +6,7 @@ import Trivia from './components/Trivia';
 function App() {
   const [questionNumber, setQuestionNumber] = useState (1);
   const [timeOut, setTimeOut] = useState (false);
-  const [earned, setEarned] = useState ("Nada mal");
+  const [earned, setEarned] = useState ("Novato");
 
   const data = [
     {
