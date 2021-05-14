@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import './App.css';
+import Timer from './components/Timer';
 import Trivia from './components/Trivia';
 
 function App() {
@@ -76,18 +77,21 @@ function App() {
     },
   ]
 
-  const ListPyramid = [
-    {id:1, amount:"10 - Nada mal"},
-    {id:2, amount:"9 - Bien"},
-    {id:3, amount:"8 - En racha prro"},
-    {id:4, amount:"7 - Seguis en racha wacho"},
-    {id:5, amount:"6 - 5/10 mira vos"},
-    {id:6, amount:"5 - Ahora se complica prro"},
-    {id:7, amount:"4 - Vamo a jugar"},
-    {id:8, amount:"3 - Ya tu sabes"},
-    {id:9, amount:"2 - No la pechees"},
-    {id:10, amount:"1 - MVP"},
-  ].reverse();
+  const ListPyramid = useMemo(() => 
+    [
+      {id:1, amount:"10 - Nada mal"},
+      {id:2, amount:"9 - Bien"},
+      {id:3, amount:"8 - En racha prro"},
+      {id:4, amount:"7 - Seguis en racha wacho"},
+      {id:5, amount:"6 - 5/10 mira vos"},
+      {id:6, amount:"5 - Ahora se complica prro"},
+      {id:7, amount:"4 - Vamo a jugar"},
+      {id:8, amount:"3 - Ya tu sabes"},
+      {id:9, amount:"2 - No la pechees"},
+      {id:10, amount:"1 - MVP"},
+    ].reverse(),
+   []
+  );
 
   useEffect(() => {
     questionNumber > 1 && 
@@ -101,7 +105,9 @@ function App() {
         ) : (
           <>
             <div className="top">
-              <div className="timmer">30</div>
+              <div className="timmer">
+                <Timer setTimeOut={setTimeOut} questionNumber={questionNumber} />
+              </div>
             </div>
             <div className="bottom">
               <Trivia 
