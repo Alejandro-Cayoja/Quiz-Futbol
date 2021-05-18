@@ -77,21 +77,174 @@ function App() {
         },
       ],
     },
+    {
+      id: 4,
+      question: " Quien realizo una falta  ",
+      answers: [
+        {
+          text: "Santos",
+          correct: true,
+        },
+        {
+          text: "Grêmio",
+          correct: false,
+        },
+        {
+          text: "São Paulo",
+          correct: false,
+        },
+        {
+          text: "Palmeiras",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 5,
+      question: " Antes de estar en el Futból Europeo ¿ En que club jugo Neymar Jr. ? ",
+      answers: [
+        {
+          text: "Santos",
+          correct: true,
+        },
+        {
+          text: "Grêmio",
+          correct: false,
+        },
+        {
+          text: "São Paulo",
+          correct: false,
+        },
+        {
+          text: "Palmeiras",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 6,
+      question: " Antes de estar en el Futból Europeo ¿ En que club jugo Neymar Jr. ? ",
+      answers: [
+        {
+          text: "Santos",
+          correct: true,
+        },
+        {
+          text: "Grêmio",
+          correct: false,
+        },
+        {
+          text: "São Paulo",
+          correct: false,
+        },
+        {
+          text: "Palmeiras",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 7,
+      question: " Antes de estar en el Futból Europeo ¿ En que club jugo Neymar Jr. ? ",
+      answers: [
+        {
+          text: "Santos",
+          correct: true,
+        },
+        {
+          text: "Grêmio",
+          correct: false,
+        },
+        {
+          text: "São Paulo",
+          correct: false,
+        },
+        {
+          text: "Palmeiras",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 8,
+      question: " Antes de estar en el Futból Europeo ¿ En que club jugo Neymar Jr. ? ",
+      answers: [
+        {
+          text: "Santos",
+          correct: true,
+        },
+        {
+          text: "Grêmio",
+          correct: false,
+        },
+        {
+          text: "São Paulo",
+          correct: false,
+        },
+        {
+          text: "Palmeiras",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 9,
+      question: " Antes de estar en el Futból Europeo ¿ En que club jugo Neymar Jr. ? ",
+      answers: [
+        {
+          text: "Santos",
+          correct: true,
+        },
+        {
+          text: "Grêmio",
+          correct: false,
+        },
+        {
+          text: "São Paulo",
+          correct: false,
+        },
+        {
+          text: "Palmeiras",
+          correct: false,
+        },
+      ],
+    },
+    {
+      id: 10,
+      question: " Antes de estar en el Futból Europeo ¿ En que club jugo Neymar Jr. ? ",
+      answers: [
+        {
+          text: "Santos",
+          correct: true,
+        },
+        {
+          text: "Grêmio",
+          correct: false,
+        },
+        {
+          text: "São Paulo",
+          correct: false,
+        },
+        {
+          text: "Palmeiras",
+          correct: false,
+        },
+      ],
+    },
   ]
 
   const ListPyramid = useMemo(() => 
     [
-      {id:1 , amount:"Novato"},
-      {id:2, amount:"10 - Nada mal"},
-      {id:3, amount:"9 - Bien"},
-      {id:4, amount:"8 - En racha prro"},
-      {id:5, amount:"7 - Seguis en racha wacho"},
-      {id:6, amount:"6 - Mira vos, sabeee"},
-      {id:7, amount:"5 - Ahora se complica prro"},
-      {id:8, amount:"4 - Vamo a jugar"},
-      {id:9, amount:"3 - Ya tu sabes"},
-      {id:10, amount:"2 - No la pechees"},
-      {id:11, amount:"1 - MVP"},
+      {id:1, amount:"10 - Nada mal"},
+      {id:2, amount:"9 - Bien"},
+      {id:3, amount:"8 - En racha prro"},
+      {id:4, amount:"7 - Seguis en racha wacho"},
+      {id:5, amount:"6 - Mira vos, sabeee"},
+      {id:6, amount:"5 - Ahora se complica prro"},
+      {id:7, amount:"4 - Vamo a jugar"},
+      {id:8, amount:"3 - Ya tu sabes"},
+      {id:9, amount:"2 - No la pechees"},
+      {id:10, amount:"1 - MVP"},
     ].reverse(),
    []
   );
@@ -106,7 +259,7 @@ function App() {
         <>
         <div className="main">
         {timeOut ? (
-          <h1 className="endText">Fallastes,<br/>llegastes hasta la <br/>posicion: {earned} </h1>
+          <h1 className="endText">Esta es tu <br /> puntuación: {earned} </h1>
         ) : (
           <>
             <div className="top">

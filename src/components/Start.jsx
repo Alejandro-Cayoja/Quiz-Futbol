@@ -8,6 +8,11 @@ export default function Start({setUsername}) {
     };
     return (
         <div className="start">
+            <h1>¿ QUE TANTO SABES DE FÚTBOL ? 
+                <br />
+                <br />
+                <h6>Aca vas a medir tu conocimiento en esta Trivia con preguntas de la epoca y actualidad sobre el Fútbol Europeo e Internacional</h6>
+            </h1>
             <input 
               placeholder="Enter your name" 
               className="startInput" 
@@ -15,5 +20,6 @@ export default function Start({setUsername}) {
             />
             <button className="startButton" onClick={handleClick}>Start</button>
         </div>
+        
     )
 }
